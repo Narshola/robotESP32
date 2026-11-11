@@ -1,2 +1,2 @@
 # robotESP32
-Simple four-wheeled robot based on ESP32 (coding)
+Controller for a simple four-wheeled robot based on ESP32.
