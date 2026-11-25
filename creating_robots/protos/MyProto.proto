@@ -1,0 +1,105 @@
+#VRML_SIM R2025a utf8
+# Describe the functionality of your PROTO here.
+
+
+PROTO MyProto [
+
+]
+{
+DEF MAIN_ROTOR Propeller {
+      shaftAxis 0 0 1
+      centerOfThrust 0.00963802 0 0.19
+      thrustConstants 0.0016657 0.001
+      torqueConstants 1e-07 1e-07
+      device RotationalMotor {
+        name "main_motor"
+        acceleration 50
+        maxVelocity 400
+        maxTorque 15
+      }
+      fastHelix DEF FAST_HELIX Solid {
+        translation 0.01 0 0.2
+        children [
+          DEF FAST_MAIN_HELIX_SHAPE Shape {
+            appearance DEF FAST_HELIX_APPEARANCE PBRAppearance {
+              baseColorMap ImageTexture {
+                url [
+                  "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/samples/devices/worlds/textures/blurred_helix.png"
+                ]
+              }
+              transparency 0.5
+              roughness 0.5
+              metalness 0
+            }
+            geometry Cylinder {
+              height 0.003
+              radius 0.145
+              side FALSE
+              subdivision 24
+            }
+          }
+        ]
+      }
+      slowHelix DEF SLOW_HELIX Solid {
+        translation 0.01 0 0.2
+        rotation -1 0 0 -1.570796
+        children [
+          DEF SLOW_MAIN_HELIX_TRANSFORM Pose {
+            rotation 0 0 1 1.570796
+            children [
+              DEF SLOW_MAIN_HELIX_GROUP Group {
+                children [
+                  Shape {
+                    appearance USE BLACK_METAL
+                    geometry Capsule {
+                      height 0.02
+                      radius 0.01
+                    }
+                  }
+                  Shape {
+                    appearance USE BLACK_METAL
+                    geometry Cylinder {
+                      height 0.07
+                      radius 0.004
+                    }
+                  }
+                  DEF RIGHT_BLADE Pose {
+                    translation 0 0 0.09
+                    rotation 0 0 1 0.361801
+                    children [
+                      DEF BLADE_SHAPE Shape {
+                        appearance PBRAppearance {
+                          baseColor 0.8 0.8 0.8
+                          roughness 1
+                          metalness 0
+                        }
+                        geometry Box {
+                          size 0.01 0.004 0.11
+                        }
+                      }
+                    ]
+                  }
+                  DEF RIGHT_BLADE Pose {
+                    translation 0 0 -0.09
+                    rotation 0 0 1 -0.361799
+                    children [
+                      DEF BLADE_SHAPE Shape {
+                        appearance PBRAppearance {
+                          baseColor 0.8 0.8 0.8
+                          roughness 1
+                          metalness 0
+                        }
+                        geometry Box {
+                          size 0.01 0.004 0.11
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    }
+}

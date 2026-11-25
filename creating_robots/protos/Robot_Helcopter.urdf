@@ -1,0 +1,179 @@
+<?xml version="1.0"?>
+<robot name="C:/Users/User/Documents/Robot_Helcopter.urdf" xmlns:xacro="http://ros.org/wiki/xacro">
+  <link name="base_link">
+    <visual>
+      <origin xyz="0 0 0.1" rpy="1.5708 0 1.570796"/>
+      <geometry>
+        <cylinder radius="0.05" length="0.1"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0.1" rpy="1.5708 0 1.570796"/>
+      <geometry>
+        <cylinder radius="0.05" length="0.1"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="0 0 0.15" rpy="1.5708 0 1.570796"/>
+      <geometry>
+        <sphere radius="0.05"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0.15" rpy="1.5708 0 1.570796"/>
+      <geometry>
+        <sphere radius="0.05"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="0 0 0.05" rpy="1.5708 0 1.570796"/>
+      <geometry>
+        <sphere radius="0.05"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0.05" rpy="1.5708 0 1.570796"/>
+      <geometry>
+        <sphere radius="0.05"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="0.065 0 0.105" rpy="0 0 0"/>
+      <geometry>
+        <sphere radius="0.042"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0.065 0 0.105" rpy="0 0 0"/>
+      <geometry>
+        <sphere radius="0.042"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="0 -0.048 0.015" rpy="1.570789 0 1.570796"/>
+      <geometry>
+        <cylinder radius="0.005" length="0.11"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 -0.048 0.015" rpy="1.570789 0 1.570796"/>
+      <geometry>
+        <cylinder radius="0.005" length="0.11"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="0 -0.048 0.07" rpy="1.570789 0 1.570796"/>
+      <geometry>
+        <sphere radius="0.005"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 -0.048 0.07" rpy="1.570789 0 1.570796"/>
+      <geometry>
+        <sphere radius="0.005"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="0 -0.048 -0.04" rpy="1.570789 0 1.570796"/>
+      <geometry>
+        <sphere radius="0.005"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 -0.048 -0.04" rpy="1.570789 0 1.570796"/>
+      <geometry>
+        <sphere radius="0.005"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="0 0.048 0.015" rpy="-1.5708 0 1.570796"/>
+      <geometry>
+        <cylinder radius="0.005" length="0.11"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0.048 0.015" rpy="-1.5708 0 1.570796"/>
+      <geometry>
+        <cylinder radius="0.005" length="0.11"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="0 0.048 -0.04" rpy="-1.5708 0 1.570796"/>
+      <geometry>
+        <sphere radius="0.005"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0.048 -0.04" rpy="-1.5708 0 1.570796"/>
+      <geometry>
+        <sphere radius="0.005"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="0 0.048 0.07" rpy="-1.5708 0 1.570796"/>
+      <geometry>
+        <sphere radius="0.005"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0.048 0.07" rpy="-1.5708 0 1.570796"/>
+      <geometry>
+        <sphere radius="0.005"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="0.01 0 0.16" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.02" length="0.02"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0.01 0 0.16" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.02" length="0.02"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="0.01 0 0.16" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.004" length="0.07"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0.01 0 0.16" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.004" length="0.07"/>
+      </geometry>
+    </collision>
+Group {
+    children 
+  }  </link>
+  <link name="solid">
+  </link>
+  <joint name="base_link_solid_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="solid"/>
+    <origin xyz="0.01 0 0.2" rpy="-0.482204 1.570792 -1.791201"/>
+  </joint>
+  <link name="solid_0">
+  </link>
+  <joint name="base_link_solid_0_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="solid_0"/>
+    <origin xyz="0.01 0 0.2" rpy="0 0 0"/>
+  </joint>
+  <link name="inertial unit">
+  </link>
+  <joint name="base_link_inertial unit_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="inertial unit"/>
+    <origin xyz="0 0 0" rpy="0 0 3.14159"/>
+  </joint>
+  <link name="gps">
+  </link>
+  <joint name="base_link_gps_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="gps"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+</robot>
