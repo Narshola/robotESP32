@@ -1,2 +1,2 @@
 # robotESP32
-A world for a simple four-wheeled robot based on ESP32.
+A Webots world with a simple four-wheeled robot (will be based on ESP32).
